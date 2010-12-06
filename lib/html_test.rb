@@ -1,3 +1,5 @@
+if !defined?(RAILS_ENV) || RAILS_ENV == 'test'
+
 %w(validator assertions url_selector url_checker link_validator validate_filter).each do |file|
   require File.join(File.dirname(__FILE__), file)
 end
@@ -48,3 +50,6 @@ class ActionController::Base
     Html::Test::UrlChecker.new(self).check_redirects_resolve
   end
 end
+
+
+end	#if !defined?(RAILS_ENV) || RAILS_ENV == 'test'
