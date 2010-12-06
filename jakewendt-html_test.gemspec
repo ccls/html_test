@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "init.rb",
+    "jakewendt-html_test.gemspec",
     "lib/DTD/xhtml-lat1.ent",
     "lib/DTD/xhtml-special.ent",
     "lib/DTD/xhtml-symbol.ent",
