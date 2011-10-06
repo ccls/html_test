@@ -103,3 +103,19 @@ Peter Marklund (http://marklunds.com)
 
 == License
 Licensed under the same terms as Ruby on Rails.
+
+
+== Gemified with Jeweler
+
+ vi Rakefile
+ rake version:write
+
+ rake version:bump:patch
+ rake version:bump:minor
+ rake version:bump:major
+
+ rake gemspec
+
+ rake install
+ rake release
+

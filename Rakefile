@@ -24,11 +24,11 @@ end
 begin
 	require 'jeweler'
 	Jeweler::Tasks.new do |gem|
-		gem.name = "jakewendt-html_test"
+		gem.name = "ccls-html_test"
 		gem.summary = %Q{Ruby on Rails plugin for HTML validation and link checking}
 		gem.description = %Q{Ruby on Rails plugin for HTML validation and link checking}
-		gem.email = "github@jake.otherinbox.com"
-		gem.homepage = "http://github.com/jakewendt/html_test"
+		gem.email = "github@jakewendt.com"
+		gem.homepage = "http://github.com/ccls/html_test"
 		gem.authors = ["Peter Marklund", "George 'Jake' Wendt"]
 		# gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
 	end
