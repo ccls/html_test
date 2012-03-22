@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{ccls-html_test}
-  s.version = "0.2.3"
+  s.name = "ccls-html_test"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Peter Marklund", "George 'Jake' Wendt"]
-  s.date = %q{2011-10-06}
-  s.description = %q{Ruby on Rails plugin for HTML validation and link checking}
-  s.email = %q{github@jakewendt.com}
+  s.date = "2012-03-22"
+  s.description = "Ruby on Rails plugin for HTML validation and link checking"
+  s.email = "github@jakewendt.com"
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
@@ -51,10 +51,10 @@ Gem::Specification.new do |s|
     "test/valid_links.html",
     "test/validate_all_test.rb"
   ]
-  s.homepage = %q{http://github.com/ccls/html_test}
+  s.homepage = "http://github.com/ccls/html_test"
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.2}
-  s.summary = %q{Ruby on Rails plugin for HTML validation and link checking}
+  s.rubygems_version = "1.8.19"
+  s.summary = "Ruby on Rails plugin for HTML validation and link checking"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
