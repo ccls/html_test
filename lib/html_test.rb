@@ -1,4 +1,5 @@
-if !defined?(RAILS_ENV) || RAILS_ENV == 'test'
+#if !defined?(RAILS_ENV) || RAILS_ENV == 'test'
+if !defined?(RAILS_ENV) || RAILS_ENV == 'test' || Rails.env == 'test'
 
 	%w(validator assertions url_selector url_checker link_validator validate_filter).each do |file|
 		require File.join(File.dirname(__FILE__), file)
@@ -74,11 +75,15 @@ validators.each do |validator|
 end
 
 if validate
-	ApplicationController.validate_all = true
+#	In Rails 3, ApplicationController not defined yet
+#	ApplicationController.validate_all = true
+	ActionController::Base.validate_all = true
 	#       default is :tidy, but it doesn't really validate.       
 	#       I've purposely not closed tags and it doesn't complain.
 	#       :w3c is ridiculously slow! even when used locally
-	ApplicationController.validators = [:w3c]
+#	ApplicationController.validators = [:w3c]
+#	In Rails 3, ApplicationController not defined yet
+	ActionController::Base.validators = [:w3c]
 	#ApplicationController.validators = [:tidy, :w3c]
 	Html::Test::Validator.verbose = false
 	Html::Test::Validator.revalidate_all = true
@@ -89,8 +94,5 @@ if validate
 else
 	puts "NOT validating html at all"
 end
-
-
-
 
 end	#if !defined?(RAILS_ENV) || RAILS_ENV == 'test'
