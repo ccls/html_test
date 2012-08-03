@@ -1,3 +1,8 @@
+require 'active_support'	#	for cattr_accessor
+require 'active_support/core_ext'
+require 'html_test'
+
+
 class TestController < ActionController::Base
   prepend_view_path(File.dirname(__FILE__))
 
