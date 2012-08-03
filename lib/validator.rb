@@ -57,7 +57,13 @@ module Html
 					# Reference in the stylesheets
 					response.body.sub!(%r{@import "./base.css"}, %Q{@import "#{File.dirname(w3c_url)}/base.css"})
 					response_file = find_unique_path(File.join(tmp_dir, "w3c_response.html"))
-					open(response_file, "w") { |f| f.puts(response.body) }
+
+					#	open(response_file, "w" ) { |f| f.puts(response.body) }
+					#	I was getting many errors like ...  (in ruby 1.9.3 and rails 3)
+					#	Encoding::UndefinedConversionError: "\xE2" from ASCII-8BIT to UTF-8
+					#	adding force_encoding('UTF-8') seems to fix this.
+					open(response_file, "w" ) { |f| f.puts(response.body.force_encoding('UTF-8')) }
+
 					"W3C status #{status}. Response from W3C was written to the file #{response_file}"
 				else
 					nil

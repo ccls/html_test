@@ -28,7 +28,9 @@ module Html
 						assert_message = "Validator #{t} failed"
 						assert_message << " for url #{url}" if url
 						assert_message << " with message '#{error}'"
-						Rails.logger.error(assert_message + " for response body:\n #{with_line_counts(body)}")
+
+#	Why would I want to print this in the log file???
+#						Rails.logger.error(assert_message + " for response body:\n #{with_line_counts(body)}")
 						assert(error.nil?, assert_message)
 					end
 				end
@@ -42,7 +44,9 @@ module Html
 			def with_line_counts(body)
 				separator = ("-" * 40) + $/
 				body_counts = separator.dup
-				body.each_with_index do |line, i|
+				#	string no longer responds to each_with_index in ruby 1.9.3
+				#	body.each_with_index do |line, i|
+				body.split(/\n/).each_with_index do |line, i|
 					body_counts << sprintf("%4u %s", i+1, line) # Right align line numbers
 				end
 				body_counts << separator
