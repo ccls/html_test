@@ -137,6 +137,6 @@ Features untested in rails 3 due to me not using them ...
 * also note, Test::Unit::AssertionFailedError doesn't exist in Ruby 1.9
   * replaced all with "MiniTest::Assertion"
   * these assert_raises are wrapped around assertion that don't have a negative
-
+* also, the gem now adds the Gemfile dependencies to it which isn't really true
 
 

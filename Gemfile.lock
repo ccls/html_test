@@ -115,6 +115,6 @@ DEPENDENCIES
   jeweler
   jquery-rails
   mocha (= 0.10.5)
-  rails (= 3.2.7)
+  rails (~> 3.2.7)
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
