@@ -5,17 +5,19 @@
 
 Gem::Specification.new do |s|
   s.name = "ccls-html_test"
-  s.version = "0.3.1"
+  s.version = "0.3.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Peter Marklund", "George 'Jake' Wendt"]
-  s.date = "2012-08-03"
+  s.date = "2012-08-06"
   s.description = "Ruby on Rails plugin for HTML validation and link checking"
   s.email = "github@jakewendt.com"
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
   s.files = [
+    "Gemfile",
+    "Gemfile.lock",
     "README.rdoc",
     "Rakefile",
     "VERSION",
@@ -37,19 +39,8 @@ Gem::Specification.new do |s|
     "lib/validate_filter.rb",
     "lib/validator.rb",
     "rails/init.rb",
-    "script/validate",
-    "test/controller_test.rb",
-    "test/integration_test.rb",
-    "test/invalid.html",
-    "test/link_validator_test.rb",
-    "test/public/image.jpg",
-    "test/rhtml_template.rhtml",
-    "test/rxml_template.rxml",
-    "test/test_helper.rb",
-    "test/untidy.html",
-    "test/valid.html",
-    "test/valid_links.html",
-    "test/validate_all_test.rb"
+    "script/rails",
+    "script/validate"
   ]
   s.homepage = "http://github.com/ccls/html_test"
   s.require_paths = ["lib"]
@@ -60,9 +51,18 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<rails>, ["= 3.2.7"])
+      s.add_runtime_dependency(%q<jquery-rails>, [">= 0"])
+      s.add_runtime_dependency(%q<jeweler>, [">= 0"])
     else
+      s.add_dependency(%q<rails>, ["= 3.2.7"])
+      s.add_dependency(%q<jquery-rails>, [">= 0"])
+      s.add_dependency(%q<jeweler>, [">= 0"])
     end
   else
+    s.add_dependency(%q<rails>, ["= 3.2.7"])
+    s.add_dependency(%q<jquery-rails>, [">= 0"])
+    s.add_dependency(%q<jeweler>, [">= 0"])
   end
 end
 
