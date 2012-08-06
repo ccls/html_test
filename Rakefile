@@ -49,7 +49,7 @@ begin
 		gem.files -= FileList['log/**/*']
 		gem.files -= FileList['pkg/**/*']
 		gem.files -= FileList['**/versions/**/*']
-		gem.files -= FileList['Gemfile*']
+		gem.files -= FileList['*Gemfile*']
 	end
 	Jeweler::GemcutterTasks.new
 rescue LoadError
