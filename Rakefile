@@ -1,3 +1,11 @@
+#!/usr/bin/env rake
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+
+require File.expand_path('../config/application', __FILE__)
+
+HtmlTest::Application.load_tasks
+
 require 'rake'
 require 'rake/testtask'
 #require 'rake/rdoctask'
@@ -33,8 +41,18 @@ begin
 		gem.homepage = "http://github.com/ccls/html_test"
 		gem.authors = ["Peter Marklund", "George 'Jake' Wendt"]
 		# gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+
+		gem.files  = FileList['**/*']
+		gem.files -= FileList['app/**/*']
+		gem.files -= FileList['config/**/*']
+		gem.files -= FileList['test/**/*']
+		gem.files -= FileList['log/**/*']
+		gem.files -= FileList['pkg/**/*']
+		gem.files -= FileList['**/versions/**/*']
 	end
 	Jeweler::GemcutterTasks.new
 rescue LoadError
 	puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
 end
+
+

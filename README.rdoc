@@ -105,6 +105,10 @@ Peter Marklund (http://marklunds.com)
 Licensed under the same terms as Ruby on Rails.
 
 
+
+
+
+
 == Gemified with Jeweler
 
  vi Rakefile
@@ -118,4 +122,21 @@ Licensed under the same terms as Ruby on Rails.
 
  rake install
  rake release
+
+== Testing
+
+Since upgrading some apps to rails 3, I found that this gem has some issues.
+So, I'm wrapping the repo code in a rails 3 app solely for testing.
+During gem creation/installation only the necessary code will be included.
+
+Features untested in rails 3 due to me not using them ...
+
+* the tidy validator
+* the check_urls option
+  * ActionController::Routing::Routes doesn't exist in Rails 3
+* also note, Test::Unit::AssertionFailedError doesn't exist in Ruby 1.9
+  * replaced all with "MiniTest::Assertion"
+  * these assert_raises are wrapped around assertion that don't have a negative
+
+
 
