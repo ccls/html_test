@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Peter Marklund", "George 'Jake' Wendt"]
-  s.date = "2012-08-06"
+  s.date = "2013-06-27"
   s.description = "Ruby on Rails plugin for HTML validation and link checking"
   s.email = "github@jakewendt.com"
   s.extra_rdoc_files = [
@@ -42,16 +42,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = "http://github.com/ccls/html_test"
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.24"
+  s.rubygems_version = "2.0.3"
   s.summary = "Ruby on Rails plugin for HTML validation and link checking"
-
-  if s.respond_to? :specification_version then
-    s.specification_version = 3
-
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-    else
-    end
-  else
-  end
 end
 

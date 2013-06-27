@@ -1,13 +1,4 @@
-#require File.join(File.dirname(__FILE__), "..", "..", "..", "..", "test", "test_helper")
-#require File.join(File.dirname(__FILE__), "test_helper")
 require 'test_helper'
-
-#ActionController::Routing::Routes.draw do |map|
-#	map.connect 'test/:action', :controller => 'test'
-#end
-#HtmlTest::Application.routes.draw do
-#	match ':controller(/:action(/:id))(.:format)'
-#end
 
 class Html::Test::ControllerTest < ActionController::TestCase
 	def setup

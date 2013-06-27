@@ -6,18 +6,15 @@ class ActiveSupport::TestCase
 	# Add more helper methods to be used by all tests here...
 end
 
-#require 'active_support'	#	for cattr_accessor
-#require 'active_support/core_ext'
 require 'html_test'
-
 
 class TestController < ActionController::Base
 	prepend_view_path(File.dirname(__FILE__))
 
 	layout nil
-	def valid; render :file => TestController.test_file(:valid) end
-	def untidy; render :file => TestController.test_file(:untidy) end
-	def invalid; render :file => TestController.test_file(:invalid) end
+	def valid; render :file => TestController.test_action(:valid), :format => :html end
+	def untidy; render :file => TestController.test_action(:untidy), :format => :html end
+	def invalid; render :file => TestController.test_action(:invalid), :format => :html end
 
 	def url_no_route
 		render :text => %Q{<a href="/norouteforthisurl">No route</a>}
@@ -59,8 +56,12 @@ class TestController < ActionController::Base
 		render :text => %Q{<img src="/image2.jpg?23049829034"/>}
 	end
 
+	def self.test_action(action)
+		File.join(File.dirname(__FILE__), "#{action}")
+	end
+
 	def self.test_file(action)
-		File.join(File.dirname(__FILE__), "#{action}.html")
+		"#{test_action(action)}.html"
 	end
 
 	def self.test_file_string(action)

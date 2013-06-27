@@ -1,13 +1,5 @@
-#require File.join(File.dirname(__FILE__), "..", "..", "..", "..", "test", "test_helper")
-#require File.join(File.dirname(__FILE__), "test_helper")
 require "test_helper"
 
-#ActionController::Routing::Routes.draw do |map|
-#	map.connect 'test/:action', :controller => 'test'
-#end
-#HtmlTest::Application.routes.draw do
-#match ':controller(/:action(/:id))(.:format)'
-#end
 ApplicationController.validate_all = false
 #ApplicationController.check_urls = true	#	Sorry, won't work in rails 3, yet
 ApplicationController.check_redirects = true
@@ -95,5 +87,3 @@ skip "ActionController::Routing::Routes doesn't exist in Rails 3"
 		assert_response :redirect
 	end
 end
-
-
